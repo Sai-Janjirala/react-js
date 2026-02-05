@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import Nav from './components/Nav.jsx'
 import Gallery from './components/Gallery.jsx'
 import './App.css'
@@ -10,7 +9,7 @@ import Child1 from './components/Child1.jsx'
 
 function App() {
   var[count,setCount]=useState(0);
-  var[name,setName]=useState("Sai");
+  var[name,setName]=useState("banana");
 
     function handleClick(){
       setCount(count+1);
