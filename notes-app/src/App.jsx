@@ -21,6 +21,12 @@ function App() {
     setDetails('')
 
   };
+
+  const deleteNote  = (idx)=>{
+    const copyTask = [...task]
+    copyTask.splice(idx,1)
+    setTask(copyTask)
+  }
   
   
 
@@ -58,7 +64,7 @@ function App() {
           </button>
         
       </form>
-      <div className="flex lg:w-1/2 gap-5  flex-wrap p-10 h-full overflow-auto">
+      <div className="flex lg:w-1/2 gap-5  flex-wrap p-10 h-[90%] overflow-auto">
       <h1 className="text-4xl font-bold">Recent Notes</h1>
         <div className="flex flex-wrap gap-5 mt-5">
           
@@ -68,6 +74,9 @@ function App() {
           return <div key={idx} className="h-52 w-40 text-black p-4 rounded-3xl bg-white">
             <h3 className="leading-tight text-xl font-bold">{elem.title}</h3>
             <p className="mt-4 leading-tight font-medium text-gray-500">{elem.details}</p>
+            <button onClick={()=>{
+              deleteNote(idx)
+            }} className="w-full cursor-pointer active:scale-95 bg-red-500 py-1 text-xs rounded font-bold text-white"> Delete</button>
           </div>
         })}
 
